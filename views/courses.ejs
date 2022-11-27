@@ -1,0 +1,50 @@
+    <%- include('partials/_header.ejs') %> 
+    <%- include('partials/_navigation.ejs') %>
+
+    <div class="carousel about-carousel">
+        <div class="carousel-items">
+            <h1>Courses</h1>
+            <div class="courses-flex-part">
+                <p class="carousel-text courses-top-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem est, fugiat quibusdam neque exercitationem, saepe quasi, optio vero nulla officiis aperiam porro id tenetur quod iure eligendi ipsum ratione temporibus?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-page-body">
+        <div class="course-list">
+            <div class="courses">
+                <% for(let x = 0; x < courses.length; x ++){ %> 
+                    <div class="course">
+                        <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
+                        <div class="course-info">
+                            <h2 class="course-title"><a href="/course.html" class="lesson"><%= courses[x].name %></a></h2>
+                            <p class="course-desc"><%= courses[x].description %></p>
+                            <hr class="teacher-hr">
+                            <p>Teacher : Emirhan Happy</p>
+                        </div>
+                    </div>
+                <% } %> 
+            </div>
+        </div>
+        <div class="search-categories">
+            <div class="search-part">
+                <div class="input-part">
+                    <input type="text" class="category-input">
+                    <button>Search</button>
+                </div>
+                <h2>Categories</h2>
+                <ul class="categories">
+                    <li>Web Design</li>
+                    <li>Programming</li>
+                    <li>Machine Learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %>
+    
+</body>
+</html>
