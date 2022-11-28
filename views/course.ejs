@@ -1,0 +1,38 @@
+    <%- include('partials/_header.ejs') %> 
+    <%- include('partials/_navigation.ejs') %>
+
+    <div class="course-page-body single-course-body">
+        <div class="course-list single-course-list">
+            <div class="courses single-course-container">
+                <div class="course single-course">
+                    <img src="/img/dark-forest.jpg" class="course-img single-course-img" width="300" height="300" alt="">
+                    <div class="single-course-info">
+                        <p class="date">11-03-22 / Teacher : Emirhan Happy</p>
+                        <div><h2><%= course.name %></h2></div>
+                        <div>
+                            <p><%= course.description %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-categories">
+            <div class="search-part">
+                <div class="input-part">
+                    <input type="text" class="category-input">
+                    <button>Search</button>
+                </div>
+                <h2>Categories</h2>
+                <ul class="categories">
+                    <li>Web Design</li>
+                    <li>Programming</li>
+                    <li>Machine Learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %> 
+    
+</body>
+</html>
