@@ -36,9 +36,9 @@
                 </div>
                 <h2>Categories</h2>
                 <ul class="categories">
-                    <li>Web Design</li>
-                    <li>Programming</li>
-                    <li>Machine Learning</li>
+                    <% for(let x = 0; x < categories.length; x ++){ %> 
+                        <li><a href="/courses?categories=<%= categories[x].slug %> "><%= categories[x].name %></a></li>
+                    <% } %> 
                 </ul>
             </div>
         </div>

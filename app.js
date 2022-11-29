@@ -3,6 +3,7 @@ const pageRoute = require('./routes/pageRoute')
 const mongoose = require('mongoose')
 const courseRoute = require('./routes/courseRoute')
 const bodyParser = require('body-parser')
+const categoryRoute = require('./routes/categoryRoute')
 
 const app = express()
 
@@ -17,9 +18,8 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.use('/', pageRoute)
-app.use('/courses', courseRoute)
-
-app.get('/about', pageRoute)
+app.use('/courses', courseRoute) 
+app.use('/categories', categoryRoute)
 
 const port = 3000
 app.listen(port, () => {
