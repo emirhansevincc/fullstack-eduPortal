@@ -1,0 +1,23 @@
+    <%- include('partials/_header.ejs') %> 
+    <%- include('partials/_navigation.ejs') %> 
+
+    <div class="main-container">
+        <div class="container">
+            <div class="top-of-form">
+                <h2>LOGIN</h2>
+            </div>
+        
+            <form class="contact" method="POST" action="users/login">
+                <input type="email" name="email" class="name form-common" placeholder="Your Email">
+                <input type="password" name="password" class="email form-common" placeholder="Your Password">
+                <div class="button-div">
+                    <button type="submit" class="contact-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %> 
+    
+</body>
+</html>
