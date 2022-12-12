@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const categoryRoute = require('./routes/categoryRoute')
 const userRoute = require('./routes/userRoute')
 const session = require('express-session'); 
-
+const MongoStore = require('connect-mongo');
 
 const app = express()
 
@@ -23,6 +23,7 @@ app.use(session({
     secret: 'my_keyboard_cat',
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/eduPortal-db' })
 }))
 
 global.userIN = null
