@@ -5,6 +5,8 @@ const courseRoute = require('./routes/courseRoute')
 const bodyParser = require('body-parser')
 const categoryRoute = require('./routes/categoryRoute')
 const userRoute = require('./routes/userRoute')
+const session = require('express-session'); 
+
 
 const app = express()
 
@@ -17,11 +19,22 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(session({
+    secret: 'my_keyboard_cat',
+    resave: false,
+    saveUninitialized: true,
+}))
 
+global.userIN = null
+app.use('*', (req, res, next) => {
+    userIN = req.session.userID;
+    next();
+});
 app.use('/', pageRoute)
 app.use('/courses', courseRoute) 
 app.use('/categories', categoryRoute)
 app.use('/users', userRoute)
+
 
 const port = 3000
 app.listen(port, () => {

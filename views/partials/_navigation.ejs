@@ -10,10 +10,15 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/courses">Courses</a></li>
-            <li><a href="/dashboard.html">Dashboard</a></li>
             <li><a href="/contact.html">Contact</a></li>
-            <li><a href="/login">L</a></li>
-            <li><a href="/register">R</a></li>
+            <% if(userIN){ %> 
+                <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/login">LO</a></li>
+            <% } %> 
+            <% if(!userIN){ %> 
+                <li><a href="/login">L</a></li>
+                <li><a href="/register">R</a></li>
+            <% } %> 
         </ul>
     </div>
 </nav>
