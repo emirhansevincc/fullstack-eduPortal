@@ -16,6 +16,11 @@ const UserSchema = new Schema({
         required: true,
         type: String,
     },
+    role: {
+        type: String,
+        enum: ['student','teacher','admin'],
+        default: 'student'
+    }
 })
 
 const saltRounds = 10
