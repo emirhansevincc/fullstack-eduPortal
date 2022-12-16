@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const Category = require('../models/Category')
 const bcrypt = require('bcrypt')
+const Course = require('../models/Course')
 
 exports.createUser = async(req, res) => {
     try{
@@ -48,9 +49,12 @@ exports.logout = async(req, res) => {
 exports.getDashboardPage = async(req, res) => {
     const currentUser = await User.findOne({_id: req.session.userID})
     const categories = await Category.find()
+    const courses = await Course.find({user: req.session.userID}).populate('user')
+
     res.status(200).render('dashboard', {
         currentUser,
         pageName: 'dashboard',
-        categories
+        categories,
+        courses
     })
 }

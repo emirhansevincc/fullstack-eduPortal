@@ -74,47 +74,19 @@
                 </form>
             </div>
  
-
-
-
             <div class="course-page-body dashboard">
                 <div class="course-list">
                     <div class="courses">
                         <div class="course enrolled-course">
+                            <% for(let i= 0 ; i<courses.length ; i++){ %> 
                             <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
                             <div class="course-info">
-                                <h2 class="course-title">HTML CSS Course</h2>
-                                <div class="release">
-                                    <a href="#">Release</a>
-                                </div>
-                                <p class="course-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quod tenetur animi quos libero cum nostrum alias ad atque fugiat!</p>
+                                <h2 class="course-title"><a href="/courses/<%= courses[i].slug %>"><%= courses[i].name %></a></h2>
+                                <p class="course-desc"><%= courses[i].description %></p>
                                 <hr class="teacher-hr">
-                                <p>Teacher : Emirhan Happy</p>
+                                <p>Teacher : <%= courses[i].user.name %></p>
                             </div>
-                        </div>
-                        <div class="course enrolled-course">
-                            <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
-                            <div class="course-info">
-                                <h2 class="course-title">HTML CSS Course</h2>
-                                <div class="release">
-                                    <a href="#">Release</a>
-                                </div>
-                                <p class="course-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quod tenetur animi quos libero cum nostrum alias ad atque fugiat!</p>
-                                <hr class="teacher-hr">
-                                <p>Teacher : Emirhan Happy</p>
-                            </div>
-                        </div>
-                        <div class="course enrolled-course">
-                            <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
-                            <div class="course-info">
-                                <h2 class="course-title">HTML CSS Course</h2>
-                                <div class="release">
-                                    <a href="#">Release</a>
-                                </div>
-                                <p class="course-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quod tenetur animi quos libero cum nostrum alias ad atque fugiat!</p>
-                                <hr class="teacher-hr">
-                                <p>Teacher : Emirhan Happy</p>
-                            </div>
+                            <% } %> 
                         </div>
                     </div>
                 </div>
