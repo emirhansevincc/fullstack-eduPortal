@@ -22,7 +22,7 @@
                             <h2 class="course-title"><a href="/courses/<%= courses[x].slug %> " class="lesson"><%= courses[x].name %></a></h2>
                             <p class="course-desc"><%= courses[x].description %></p>
                             <hr class="teacher-hr">
-                            <p>Teacher : <%= courses[x].user %></p>
+                            <p>Teacher : <%= courses[x].user.name %></p>
                         </div>
                     </div>
                 <% } %> 
@@ -31,8 +31,10 @@
         <div class="search-categories">
             <div class="search-part">
                 <div class="input-part">
-                    <input type="text" class="category-input">
-                    <button>Search</button>
+                    <form action="/courses" method="get">
+                        <input type="text" name="search" class="category-input">
+                        <button>Search</button>
+                    </form>
                 </div>
                 <h2>Categories</h2>
                 <ul class="categories">

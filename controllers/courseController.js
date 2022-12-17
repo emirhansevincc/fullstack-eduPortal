@@ -25,12 +25,32 @@ exports.getAllCourses = async(req, res) => {
     const categoryParameter = req.query.categories
     const category = await Category.findOne({slug: categoryParameter})
 
+    const query = req.query.search
+
     let filteredCategory = {}
     if(category){
         filteredCategory = {category:category._id}
     }
 
-    const courses = await Course.find(filteredCategory).sort('-createdDate')
+
+    if(query){
+        filteredCategory = {
+            name: query,
+        }
+    }
+    if(!query && !category){
+        filteredCategory = {
+            name: '',
+            category: null,
+        }
+    }
+
+    const courses = await Course.find({
+        $or: [
+            {name: {$regex: '.*' + filteredCategory.name + '.*', $options:'i'}},
+            {category: filteredCategory.category}
+        ]
+    }).sort('-createdDate').populate('user')
     const categories = await Category.find()
 
     try{
@@ -50,11 +70,14 @@ exports.getAllCourses = async(req, res) => {
 exports.getCourse = async(req, res) => {
     const course = await Course.findOne({slug: req.params.slug}).populate('user')
     const user = await User.findById(req.session.userID);
+    const categories = await Category.find()
+
     try{
         res.status(200).render('course.ejs', {
             course,
             pageName : 'courses',
-            user
+            user,
+            categories
         })
     } catch (err) {
         res.status(400).json({
