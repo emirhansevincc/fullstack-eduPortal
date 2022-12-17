@@ -6,8 +6,13 @@
             <div class="courses single-course-container">
                 <div class="course single-course">
                     <img src="/img/dark-forest.jpg" class="course-img single-course-img" width="300" height="300" alt="">
+                    <form method="post" action="/courses/enroll">
+                        <input type="hidden" name="course_id" value="<%= course._id %>">
+                        <button type="submit" class="enroll-text">ENROLL</button>
+                    </form>
                     <div class="single-course-info">
                         <p class="date">11-03-22 / Teacher : <%= course.user.name %></p>
+
                         <div><h2><%= course.name %></h2></div>
                         <div>
                             <p><%= course.description %></p>

@@ -524,3 +524,11 @@ textarea{resize: none;}
     border-radius: 15px;
     color: white;
 }
+.enroll-text{
+    padding: 3px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 3px solid whitesmoke;
+    color: whitesmoke;
+    cursor: pointer;
+}
