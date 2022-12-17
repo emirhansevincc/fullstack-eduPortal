@@ -17,7 +17,10 @@
                             <div class="course-info">
                                 <h2 class="course-title"><%= currentUser.courses[i].name %></h2>
                                 <div class="release">
-                                    <a href="#">Release</a>
+                                    <form action="/courses/release" method="post">
+                                        <button type="submit">Release</button>
+                                        <input type="hidden" name="course_id" value="<%= currentUser.courses[i]._id %>">
+                                    </form>
                                 </div>
                                 <p class="course-desc"><%= currentUser.courses[i].description %></p>
                                 <hr class="teacher-hr">
