@@ -1,0 +1,25 @@
+    <%- include('partials/_header.ejs') %> 
+    <%- include('partials/_navigation.ejs') %>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="top-of-form">
+                <h2>Get In Touch With Us !</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In harum ad fugiat culpa perspiciatis nobis est sit. Officia, aliquid necessitatibus!</p>    
+            </div>
+        
+            <form class="contact" method="POST" action="/contact">
+                <input type="text" name="name" class="name form-common" placeholder="Your Full Name">
+                <input type="email" name="email" class="email form-common" placeholder="Your Email">
+                <textarea name="message" id="" cols="30" class="form-common" rows="10" placeholder="Enter Your Message"></textarea>
+                <div class="button-div">
+                    <button type="submit" class="contact-btn">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %> 
+    
+</body>
+</html>
