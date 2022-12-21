@@ -7,6 +7,7 @@ const categoryRoute = require('./routes/categoryRoute')
 const userRoute = require('./routes/userRoute')
 const session = require('express-session'); 
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
 
 const app = express()
 
@@ -25,6 +26,11 @@ app.use(session({
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/eduPortal-db' })
 }))
+app.use(flash());
+app.use((req, res, next) => {
+    res.locals.flashMessages = req.flash()
+    next()
+})
 
 global.userIN = null
 app.use('*', (req, res, next) => {

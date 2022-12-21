@@ -532,3 +532,20 @@ textarea{resize: none;}
     color: whitesmoke;
     cursor: pointer;
 }
+.alert-danger{
+    color: red;
+    border: 3px solid red;
+    padding: 8px;
+    border-radius: 10px;
+}
+.alert-success{
+    color: green;
+    border: 3px solid green;
+    padding: 8px;
+    border-radius: 10px;
+}
+.course-created{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -12,6 +12,24 @@
         </div>
     </div>
 
+    <div class="course-created">
+        <% if(flashMessages){ %> 
+            <% if(flashMessages.success){ %> 
+                <div style="margin: 0 15px 20px 15px;width: 400px;" class="alert-success">
+                    <p>
+                        <%= flashMessages.success %> 
+                    </p>
+                </div>
+            <% } else if(flashMessages.error){ %> 
+                <div style="margin: 0 15px 20px 15px;width: 400px;" class="alert-error">
+                    <p>
+                        <%= flashMessages.error %> 
+                    </p>
+                </div>
+            <% } %> 
+        <% } %>
+    </div>
+
     <div class="course-page-body">
         <div class="course-list">
             <div class="courses">

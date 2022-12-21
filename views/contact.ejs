@@ -7,6 +7,22 @@
                 <h2>Get In Touch With Us !</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In harum ad fugiat culpa perspiciatis nobis est sit. Officia, aliquid necessitatibus!</p>    
             </div>
+
+            <% if(flashMessages){ %> 
+                <% if(flashMessages.success){ %> 
+                    <div style="margin: 0 15px 20px 15px;" class="alert-success">
+                        <p>
+                            <%= flashMessages.success %> 
+                        </p>
+                    </div>
+                <% } else if(flashMessages.error){ %> 
+                    <div style="margin: 0 15px 20px 15px;" class="alert-error">
+                        <p>
+                            <%= flashMessages.error %> 
+                        </p>
+                    </div>
+                <% } %> 
+            <% } %> 
         
             <form class="contact" method="POST" action="/contact">
                 <input type="text" name="name" class="name form-common" placeholder="Your Full Name">

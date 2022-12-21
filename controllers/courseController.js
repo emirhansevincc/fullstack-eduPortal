@@ -11,6 +11,7 @@ exports.createCourse = async(req, res) => {
             user: req.session.userID,
         })
 
+        req.flash('success', `${course.name} has been created.`)
         res.status(201).redirect('/courses')
     } catch (err) {
         res.status(400).json({
