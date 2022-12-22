@@ -379,6 +379,7 @@ body{
 @media (max-width: 820px){
     .course-page-body{
         flex-direction: column;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin: 10px;
@@ -387,14 +388,20 @@ body{
     .courses{margin-bottom: 25px;}
     .course-img{width: 100%;}
     .course-title .course-desc{width: 100%;}
-    .course{
-        width: 300px;
-        height: 200pxpx;
-    }
-    .search-part{
-        width: 100%;
-    }
+    .course{width: 300px;}
+    .search-part{width: 100%;}
 }
+.update-delete{
+    background-color: transparent;
+    padding: 5px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+}
+.delete-update{
+    margin-top: 20px;
+}
+.single-course{margin: 30px;}
 .enroll-text{
     border: 3px solid whitesmoke;
     padding: 15px;
@@ -548,4 +555,14 @@ textarea{resize: none;}
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.dashboard-error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-error p{
+    border: 3px solid red;
+    padding: 5px;
+    border-radius: 15px;
 }

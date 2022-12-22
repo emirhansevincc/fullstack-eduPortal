@@ -54,6 +54,16 @@
                     <div><button type="submit">Create New Course</button></div>
                 </form>
             </div>
+
+            <% if(flashMessages){ %> 
+                <% if(flashMessages.error){ %> 
+                    <div class="dashboard-error">
+                        <p>
+                            <%= flashMessages.error %> 
+                        </p>
+                    </div>
+                <% } %> 
+            <% } %>
  
             <div class="course-page-body dashboard">
                 <div class="course-list">
@@ -66,8 +76,12 @@
                                 <p class="course-desc"><%= courses[i].description %></p>
                                 <hr class="teacher-hr">
                                 <p>Teacher : <%= courses[i].user.name %></p>
+                                <div class="delete-update">
+                                    <a class="delete update-delete" href="/courses/<%= courses[i].slug %>?_method=DELETE">DELETE</a>
+                                    <a class="update update-delete">UPDATE</a>
+                                </div>
                             </div>
-                            <% } %> 
+                            <% } %>
                         </div>
                     </div>
                 </div>
