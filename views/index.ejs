@@ -19,11 +19,11 @@
         <div class="latest">
             <h1>Latest Courses</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, corrupti!</p>
-        </div>
+        </div> 
         <div class="course-main">
             <div class="course-info">
-                <h1 class="course-name common">Course Name</h1>
-                <h3 class="course-desc common">Course Description Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates in nihil quo eos reiciendis, dolorem sit obcaecati, quos commodi placeat alias enim esse! Aspernatur consequuntur suscipit perferendis enim quibusdam nihil.</h3>
+                <h1 class="course-name common"><%= latestTwoCourse[0].name.substring(0,100) + ' ...' %></h1>
+                <h3 class="course-desc common"><%= latestTwoCourse[0].description.substring(0,100) + ' ...' %></h3>
                 <button class="common learn-more">Learn More</button>
             </div>
             <div class="course-img">
@@ -31,13 +31,13 @@
             </div>
         </div>
         <div class="course-main">
-            <div class="course-img">
-                <img src="/img/edu.jpg" class="course-image" width="450" height="350" alt="">
-            </div>
             <div class="course-info">
-                <h1 class="course-name common">Course Name</h1>
-                <h3 class="course-desc common">Course Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint facere deserunt impedit optio consequatur voluptas, distinctio fuga necessitatibus neque aliquam nobis eos? Nostrum expedita sunt neque sit dolore consequatur?</h3>
+                <h1 class="course-name common"><%= latestTwoCourse[1].name.substring(0,100) + ' ...' %></h1>
+                <h3 class="course-desc common"><%= latestTwoCourse[1].description.substring(0,100) + ' ...' %></h3>
                 <button class="common learn-more">Learn More</button>
+            </div>
+            <div class="course-img">
+                <img src="/img/elearn.jpg" class="course-image" width="450" height="350" alt="">
             </div>
         </div>
     </div>
@@ -46,17 +46,17 @@
         <div class="teacher-student-courses">
             <div class="student teacher-student-courses-common">
                 <div class="student-place place-common"></div>
-                <div class="number">13</div>
+                <div class="number"><%- totalStudents %></div>
                 <h2>Students</h2>
             </div>
             <div class="courses teacher-student-courses-common">
                 <div class="student-place place-common"></div>
-                <div class="number">12</div>
+                <div class="number"><%- totalCourses %></div>
                 <h2>Courses</h2>
             </div>
             <div class="teachers teacher-student-courses-common">
                 <div class="student-place place-common"></div>
-                <div class="number">11</div>
+                <div class="number"><%- totalTeachers %></div>
                 <h2>Teachers</h2>
             </div>
         </div>

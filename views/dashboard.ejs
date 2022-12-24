@@ -58,9 +58,7 @@
             <% if(flashMessages){ %> 
                 <% if(flashMessages.error){ %> 
                     <div class="dashboard-error">
-                        <p>
-                            <%= flashMessages.error %> 
-                        </p>
+                        <p><%= flashMessages.error %> </p>
                     </div>
                 <% } %> 
             <% } %>
@@ -93,6 +91,7 @@
                 <h2>Welcome <%- currentUser.name %> (Admin)</h2>
             </div>
 
+            <h2 class="users">Users</h2>
             <ul class="userList">
                 <% for (let i=0; i< users.length; i++) { %>
                     <li class="list">
@@ -104,6 +103,34 @@
                     </li>
                 <% } %>
             </ul>
+
+            <div class="categories-button">
+                <h2 class="categories">Categories</h2>
+                <button class="modal-button">ADD CATEGORY</button>
+            </div>
+            <ul class="userList">
+                <% for (let i=0; i< categories.length; i++) { %>
+                    <li class="list">
+                        <span class="tid"><%=categories[i].name %></span>
+                        <form action="/categories/<%=categories[i]._id %>?_method=DELETE" method="post">
+                            <button>DELETE</button>
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+            <div class="modal-container" id="modal-container">
+                <div class="modal">
+                    <div class="inputs">
+                        <form action="/categories" method="POST">
+                            <input type="text" placeholder="Enter a catgory" name="name">
+                            <button type="submit" class="modal-edit">Add New Category</button>
+                            <button class="modal-close" id="modal-close">X</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
         <% } %>
 
     <% } %> 

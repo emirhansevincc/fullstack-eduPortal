@@ -593,13 +593,17 @@ textarea{resize: none;}
     align-items: center;
     justify-content: space-around;
 }
-/* .userList li span{margin-left: 40px;} */
 .tdelete a {
     text-decoration: none;
     color: white;
     background-color: red;
     padding: 5px;
     border-radius: 10px;
+}
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 @media (max-width: 820px){
     .userList li{
@@ -617,4 +621,16 @@ textarea{resize: none;}
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.users{margin-left: 50px;}
+.categories{margin: 40px 0 0 50px;}
+.categories-button button{
+    margin-left: 50px;
+    padding: 3px 15px;
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
 }

@@ -11,15 +11,11 @@
             <% if(flashMessages){ %> 
                 <% if(flashMessages.success){ %> 
                     <div style="margin: 0 15px 20px 15px;" class="alert-success">
-                        <p>
-                            <%= flashMessages.success %> 
-                        </p>
+                        <p><%= flashMessages.success %></p>
                     </div>
                 <% } else if(flashMessages.error){ %> 
                     <div style="margin: 0 15px 20px 15px;" class="alert-error">
-                        <p>
-                            <%= flashMessages.error %> 
-                        </p>
+                        <p><%= flashMessages.error %> </p>
                     </div>
                 <% } %> 
             <% } %> 

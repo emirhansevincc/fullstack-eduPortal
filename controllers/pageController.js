@@ -1,9 +1,20 @@
 const nodemailer = require("nodemailer");
+const Course = require('../models/Course')
+const User = require('../models/User')
 
-exports.getIndexPage = (req, res) => {
+exports.getIndexPage = async(req, res) => {
     console.log(req.session.userID);
+    const latestTwoCourse = await Course.find().sort('-createdDate').limit(2)
+    const totalStudents = await User.countDocuments({role: 'student'})
+    const totalTeachers = await User.countDocuments({role: 'teacher'})
+    const totalCourses = await Course.find().countDocuments()
+
     res.status(200).render('index', {
-        pageName: 'index' // You can use it navbar active class
+        pageName: 'index', // You can use it navbar active class
+        latestTwoCourse,
+        totalStudents,
+        totalTeachers,
+        totalCourses
     })
 }
 

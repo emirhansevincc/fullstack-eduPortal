@@ -38,7 +38,7 @@
                         <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
                         <div class="course-info">
                             <h2 class="course-title"><a href="/courses/<%= courses[x].slug %> " class="lesson"><%= courses[x].name %></a></h2>
-                            <p class="course-desc"><%= courses[x].description %></p>
+                            <p class="course-desc"><%= courses[x].description.substring(0, 100) + ' ...' %></p>
                             <hr class="teacher-hr">
                             <p>Teacher : <%= courses[x].user.name %></p>
                         </div>
