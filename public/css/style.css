@@ -319,6 +319,7 @@ body{
 }
 .search-part{margin-top: 30px;}
 .input-part{display: flex;}
+.input-part form{display: flex;}
 .category-input{
     width: 100%;
     padding: 8px;
@@ -390,6 +391,14 @@ body{
     .course-title .course-desc{width: 100%;}
     .course{width: 300px;}
     .search-part{width: 100%;}
+}
+@media (max-width: 920px){
+    .teacher-student-courses{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 .update-delete{
     background-color: transparent;
@@ -565,4 +574,47 @@ textarea{resize: none;}
     border: 3px solid red;
     padding: 5px;
     border-radius: 15px;
+}
+.userList{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.userList li{
+    width: 90%;
+    background-color: #222;
+    margin: 10px;
+    padding: 12px;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* .userList li span{margin-left: 40px;} */
+.tdelete a {
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 10px;
+}
+@media (max-width: 820px){
+    .userList li{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .userList li span{
+        margin-top: 15px;
+    }
+}
+.courses{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

@@ -68,26 +68,43 @@
             <div class="course-page-body dashboard">
                 <div class="course-list">
                     <div class="courses">
-                        <div class="course enrolled-course">
                             <% for(let i= 0 ; i<courses.length ; i++){ %> 
-                            <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
-                            <div class="course-info">
-                                <h2 class="course-title"><a href="/courses/<%= courses[i].slug %>"><%= courses[i].name %></a></h2>
-                                <p class="course-desc"><%= courses[i].description %></p>
-                                <hr class="teacher-hr">
-                                <p>Teacher : <%= courses[i].user.name %></p>
-                                <div class="delete-update">
-                                    <a class="delete update-delete" href="/courses/<%= courses[i].slug %>?_method=DELETE">DELETE</a>
-                                    <a class="update update-delete">UPDATE</a>
+                                <div class="course enrolled-course">
+                                    <img src="/img/dark-forest.jpg" class="course-img" width="300" height="300" alt="">
+                                    <div class="course-info">
+                                        <h2 class="course-title"><a href="/courses/<%= courses[i].slug %>"><%= courses[i].name %></a></h2>
+                                        <p class="course-desc"><%= courses[i].description %></p>
+                                        <hr class="teacher-hr">
+                                        <p>Teacher : <%= courses[i].user.name %></p>
+                                        <div class="delete-update">
+                                            <a class="delete update-delete" href="/courses/<%= courses[i].slug %>?_method=DELETE">DELETE</a>
+                                            <button class="update update-delete modal-button">UPDATE</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
                             <% } %>
-                        </div>
                     </div>
                 </div>
             </div>
         <% } %> 
 
+        <% if(currentUser.role === 'admin'){ %> 
+            <div class="enroll-text">
+                <h2>Welcome <%- currentUser.name %> (Admin)</h2>
+            </div>
+
+            <ul class="userList">
+                <% for (let i=0; i< users.length; i++) { %>
+                    <li class="list">
+                        <span class="tid"><%=users[i]._id %></span>
+                        <span class="tid"><%=users[i].name %></span>
+                        <span class="temail"><%=users[i].email %></span>
+                        <span class="trole"><%=users[i].role %></span>
+                        <span class="tdelete"><a href="/users/<%=users[i]._id %>?_method=DELETE">DELETE</a></span>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
 
     <% } %> 
 
